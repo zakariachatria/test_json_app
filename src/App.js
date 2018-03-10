@@ -34,6 +34,18 @@ class App extends Component {
             etat: value
         });
     };
+    handleValToDelete=(e)=> {
+        let value =e.target.value;
+        this.setState({valTodelete:value});
+    };
+    handleDeleteValue=(e) =>{
+        e.preventDefault();
+        let jsonobjet2 = this.state.jsonobjet;
+        let val=Object.keys(jsonobjet2).includes(this.state.valTodelete)?this.state.valTodelete:Object.keys(jsonobjet2)[0];
+        delete jsonobjet2[val];
+        this.setState({jsonobjet:jsonobjet2});
+
+    };
   render() {
     return (
       <div>
@@ -61,6 +73,11 @@ class App extends Component {
               />
 
           }
+          <DeleteValue
+              jsonobjet={this.state.jsonobjet}
+              handleValToDelete={this.handleValToDelete}
+              handleDeleteValue={this.handleDeleteValue}
+          />
           {JSON.stringify(this.state.jsonobjet) && <pre>{JSON.stringify(this.state.jsonobjet)}</pre>}
       </div>
     );
@@ -163,6 +180,26 @@ class AddBoolean extends Component {
             </form>
         );
     }
+}
+class DeleteValue extends Component{
+    render(){
+        let options = [];
+        let key;
+        for (let i=0; i <Object.keys(this.props.jsonobjet).length ; i++){
+            key =Object.keys(this.props.jsonobjet)[i];
+            options.push(<option value={key} key={key}>{key}</option>)
+        }
+        return (
+            <form onSubmit={this.props.handleDeleteValue}>
+                <select onChange={this.props.handleValToDelete}>
+                    {options}
+
+                </select>
+                <button>Delete</button>
+            </form>
+        );
+    }
+
 }
 
 export default App;
