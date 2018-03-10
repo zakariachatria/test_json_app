@@ -98,7 +98,7 @@ class AddString extends Component {
 
 
                     <br/>
-                    <button>Submit</button>
+                    <button>Add</button>
                 </form>
             </div>
         );
@@ -124,7 +124,7 @@ class AddNumber extends Component {
 
 
                     <br/>
-                    <button>Submit</button>
+                    <button>Add</button>
                 </form>
             </div>
         );
@@ -158,7 +158,7 @@ class AddBoolean extends Component {
                         onChange={this.props.handleChangeBoolean}/>
                 </label>
                 <br/>
-                <button >Submit</button>
+                <button >Add</button>
 
             </form>
         );
