@@ -9,6 +9,7 @@ export default class ChooseType extends Component {
                     <option value='string'>string</option>
                     <option value='boolean'>boolean</option>
                     <option value='number'>number</option>
+                    <option value='array'>array</option>
                 </select>
             </form>
         );

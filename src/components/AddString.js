@@ -18,7 +18,7 @@ export default class AddString extends Component {
 
 
                     <br/>
-                    <button>Add</button>
+                    <button type="submit" className="btn btn-primary">Add</button>
                 </form>
             </div>
         );

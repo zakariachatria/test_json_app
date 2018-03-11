@@ -12,15 +12,15 @@ export default class AddNumber extends Component {
 
                     <label forhtml="key">enter the key : </label>
 
-                    <input type="text" name='key'/>
+                    <input type="text" name='key' />
                     <br/>
-                    <label forhtml="value">enter a {this.props.type} : </label>
+                    <label forhtml="value">enter a {this.props.type}   : </label>
 
                     {<input type="text" name='valeur'/>}
 
 
                     <br/>
-                    <button>Add</button>
+                    <button type="submit" className="btn btn-primary">Add</button>
                 </form>
             </div>
         );

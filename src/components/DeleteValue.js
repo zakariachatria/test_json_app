@@ -9,13 +9,15 @@ export default class DeleteValue extends Component{
             options.push(<option value={key} key={key}>{key}</option>)
         }
         return (
+            <div className={"my-4"}>
             <form onSubmit={this.props.handleDeleteValue}>
                 <select onChange={this.props.handleValToDelete}>
                     {options}
 
                 </select>
-                <button>Delete</button>
+                <button type="submit" className="btn btn-danger">Delete</button>
             </form>
+            </div>
         );
     }
 

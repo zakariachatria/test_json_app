@@ -28,7 +28,7 @@ export default class AddBoolean extends Component {
                         onChange={this.props.handleChangeBoolean}/>
                 </label>
                 <br/>
-                <button >Add</button>
+                <button type="submit" className="btn btn-primary">Add</button>
 
             </form>
         );
