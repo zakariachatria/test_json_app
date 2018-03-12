@@ -15,7 +15,8 @@ export default class DeleteValue extends Component{
                     {options}
 
                 </select>
-                <button type="submit" className="btn btn-danger">Delete</button>
+
+                <button type="submit" className="btn btn-danger" id='delete'>Delete</button>
             </form>
             </div>
         );

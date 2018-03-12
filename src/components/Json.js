@@ -72,7 +72,7 @@ export default class Json extends Component {
 
     componentDidUpdate(prevProps, prevState) {
 
-            
+
                 const json = JSON.stringify(this.state.jsonobjet);
                 localStorage.setItem("jsonobjet", json);
 
