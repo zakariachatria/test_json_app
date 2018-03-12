@@ -9,7 +9,6 @@ export default class Json extends Component {
     state = {
         type: 'string',
         etat: undefined,
-        tableau:[],
         jsonobjet: {}
     };
     handleChangeType = (e) => {
@@ -59,7 +58,27 @@ export default class Json extends Component {
             jsonobjet2[key]=array;
         this.setState(({jsonobjet:jsonobjet2}));
     };
-    
+    componentDidMount() {
+        try {
+            const json = localStorage.getItem("jsonobjet");
+            const jsonobjet = JSON.parse(json);
+            if (jsonobjet) {
+                this.setState(() => ({jsonobjet}));
+            }
+        } catch (e) {
+
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+
+            
+                const json = JSON.stringify(this.state.jsonobjet);
+                localStorage.setItem("jsonobjet", json);
+
+
+    }
+
     render() {
         return (
             <div>
@@ -97,7 +116,7 @@ export default class Json extends Component {
                     <AddArray handleSendArray={this.handleSendArray}/>
                 }
            <div className={"json"}>
-               {JSON.stringify(this.state.jsonobjet) && <pre>{JSON.stringify(this.state.jsonobjet)}</pre>}
+               {JSON.stringify(this.state.jsonobjet) && <h2><pre>{JSON.stringify(this.state.jsonobjet)}</pre></h2>}
            </div>
 
             </div>
